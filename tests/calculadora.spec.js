@@ -1,6 +1,13 @@
 const { test, expect } = require('@playwright/test');
 const path = require('path');
 
+import { test, expect } from '@playwright/test';
+
+test('teste de falha propositada para cenario vermelho', async ({ page }) => {
+  // Exemplo de uma asserção que falha sempre:
+  expect(1 + 1).toBe(3); 
+});
+
 test.beforeEach(async ({ page }) => {
   const filePath = path.resolve(__dirname, '../index.html');
   await page.goto(`file://${filePath}`);
